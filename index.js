@@ -23,6 +23,17 @@ app.get('/user/:id', async (req, res) => {
   res.send('hello world');
 });
 
+app.patch('/users/:id', (req, res) => {
+  const updates = Object.keys(req.body);
+  const allowedUpdates = ['name', 'email', 'password', 'age'];
+  const isValidOperation = updates.every((update) =>
+    allowedUpdates.includes(update)
+  );
+  if (!isValidOperation) {
+    return res.status(400).send({ error: 'invalid updates!' });
+  }
+});
+
 app.listen(port, () => {
   console.log('app is up and running in the port 3000');
 });

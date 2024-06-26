@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "mongodb.js"
+    "dev": "nodemon mongodb.js/index.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
     "express": "^4.19.2",
     "jshint": "^2.13.6",
     "mongodb": "^5.7.0",
-    "mongoose": "^7.4.0"
+    "mongoose": "^7.4.0",
+    "nodemon": "^3.1.4"
   }
 }
