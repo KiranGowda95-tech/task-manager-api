@@ -12,3 +12,11 @@ router.patch('/user/:id', async (req, res) => {
     return res.status(400).send({ error: 'Invalid updates!' });
   }
 });
+
+router.post('/users/login',async(req,res)=>{
+  try{
+    const user=await User.findByCredentials(req.body.email,req.body.password)
+  }catch(e){
+
+  }
+})
