@@ -79,3 +79,13 @@ app.delete('/users/:id', async (req, res) => {
 app.listen(port, () => {
   console.log('app is up and running in the port 3000');
 });
+const bcrypt = require('bcryptjs');
+
+const myFunction = async () => {
+  const password = 'GotSettled!123';
+
+  const hashedPassword = await bcrypt.hash(password, 8);
+  console.log(hashedPassword);
+};
+
+myFunction();
